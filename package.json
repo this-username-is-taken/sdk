@@ -10,8 +10,8 @@
   ],
   "repository": "https://github.com/trisolaris-labs/sdk",
   "keywords": [
-    "pangolin",
-    "avalanche"
+    "trisolaris",
+    "aurora"
   ],
   "module": "dist/sdk.esm.js",
   "scripts": {
@@ -56,5 +56,9 @@
     "printWidth": 120,
     "semi": false,
     "singleQuote": true
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   }
 }
