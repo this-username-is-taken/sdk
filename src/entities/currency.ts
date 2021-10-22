@@ -16,7 +16,8 @@ export class Currency {
   /**
    * The only instance of the base class `Currency`.
    */
-  public static readonly CETH: Currency = new Currency(18, 'ETH', 'Ethereum')
+  // public static readonly CETH: Currency = new Currency(18, 'ETH', 'Ethereum')
+  public static readonly CETH: Currency = new Currency(18, 'MATIC', 'Matic')
   /**
    * Constructs an instance of the base class `Currency`. The only instance of the base class `Currency` is `Currency.ETHER`.
    * @param decimals decimals of the currency
