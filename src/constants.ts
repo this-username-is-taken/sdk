@@ -1,4 +1,5 @@
 import JSBI from 'jsbi'
+import { Token } from 'entities'
 
 // exports for external consumption
 export type BigintIsh = JSBI | bigint | string
@@ -7,7 +8,7 @@ export enum ChainId {
   FUJI = 43113,
   AVALANCHE = 43114,
   POLYGON = 137,
-  AURORA = 1313161554,
+  AURORA = 1313161554
 }
 
 export enum TradeType {
@@ -23,7 +24,6 @@ export enum Rounding {
 
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
 export const ZERO_INIT_CODE = '0x0000000000000000000000000000000000000000000000000000000000000000'
-
 
 export const FACTORY_ADDRESS: { [chainId in ChainId]: string } = {
   [ChainId.FUJI]: '0xE4A575550C2b460d2307b82dCd7aFe84AD1484dd',
@@ -44,6 +44,13 @@ export const INIT_CODE_HASH: { [chainId in ChainId]: string } = {
   [ChainId.AVALANCHE]: ZERO_INIT_CODE,
   [ChainId.POLYGON]: '0x4a697f690d1f46e0f1a897a8662acae31ced3039b00c052392ed0bc179f9f28c',
   [ChainId.AURORA]: '0x754e1d90e536e4c1df81b7f030f47b4ca80c87120e145c294f098c83a6cb5ace'
+}
+
+export const XTRI: { [chainId in ChainId]: Token } = {
+  [ChainId.FUJI]: new Token(ChainId.FUJI, ZERO_ADDRESS, 18, 'xTRI', 'TriBar Token'),
+  [ChainId.AVALANCHE]: new Token(ChainId.AVALANCHE, ZERO_ADDRESS, 18, 'xTRI', 'TriBar Token'),
+  [ChainId.POLYGON]: new Token(ChainId.POLYGON, ZERO_ADDRESS, 18, 'xTRI', 'TriBar Token'),
+  [ChainId.AURORA]: new Token(ChainId.AURORA, '0x802119e4e253D5C19aA06A5d567C5a41596D6803', 18, 'xTRI', 'TriBar')
 }
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)
